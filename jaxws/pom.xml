@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.toniclecb</groupId>
+  <artifactId>jaxws</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>jaxws</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- this is for work fine in jdk 11 -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+    
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Dependencies to run jax-ws -->
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>2.3.3</version>
+        <type>pom</type>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>rt</artifactId>
+        <version>2.3.3</version>
+    </dependency>
+    <!-- for wsimport work -->
+	<dependency>
+	    <groupId>javax.activation</groupId>
+	    <artifactId>activation</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+	<plugins>
+		<!-- for generate classes from wsdl in compilation -->
+		<plugin>
+		    <groupId>com.sun.xml.ws</groupId>
+		    <artifactId>jaxws-maven-plugin</artifactId>
+		    <version>2.3.2</version>
+		    <executions>
+		      <execution>
+		        <id>generate-java-sources</id>
+		        <phase>generate-sources</phase>
+		        <goals>
+		          <goal>wsimport</goal>
+		        </goals>
+		        <configuration>
+		          <extension>true</extension>
+		          <wsdlFiles>
+		            <wsdlFile>${project.basedir}\wsdl\NumberWeb.wsdl</wsdlFile>
+		          </wsdlFiles>
+		          <!-- <wsdlLocation>/wsdl/NumberWeb.wsdl</wsdlLocation> -->
+		        </configuration>
+		      </execution>
+		    </executions>
+		    <dependencies>
+		      <dependency>
+		        <groupId>javax.annotation</groupId>
+		        <artifactId>javax.annotation-api</artifactId>
+		        <version>1.3.2</version>
+		      </dependency>
+		      <dependency>
+		        <groupId>javax.xml.bind</groupId>
+		        <artifactId>jaxb-api</artifactId>
+		        <version>2.3.1</version>
+		      </dependency>
+		      <dependency>
+		        <groupId>javax.xml.ws</groupId>
+		        <artifactId>jaxws-api</artifactId>
+		        <version>2.3.1</version>
+		      </dependency>
+		      <dependency>
+		        <groupId>javax.jws</groupId>
+		        <artifactId>javax.jws-api</artifactId>
+		        <version>1.1</version>
+		      </dependency>
+		    </dependencies>
+		  </plugin>
+		</plugins>
+	</build>
+</project>
