@@ -7,6 +7,11 @@ From: https://docs.oracle.com/javaee/6/tutorial/doc/bnayl.html
 
 ### This project
 This repository contais two projects, jaxws which contains Publisher and jaxwsclient which contains Consumer.
+jaxwsclient also have a plugin to generate classes from Publisher.
+
+Run Plublisher.main() to start the server...
+Then you can run Consumer.main() to get results from the server...
+and if you run `mvn install` in jaxwsclient you will get the generated classes.
 
 ### Runner classes
 
@@ -20,8 +25,10 @@ http://localhost:8080/numbers?wsdl
 ### Generated classes for WSDL - "WsImport" via plugin maven
 Plugin jaxws-maven-plugin in pom.xml (jaxws) line 52
 
-(jaxws) - Generated in ...\jaxws\target\generated-sources\wsimport\com\toniclecb\jaxws\server
-(jaxwsclient) - copied to .../jaxwsclient/src/main/java/com/toniclecb/jaxwsclient/generated
+(jaxwsclient) - Generated in ...jaxwsexample\jaxwsclient\target\generated-sources\wsimport
+(jaxwsclient) - copied to ...jaxwsexample/jaxwsclient/src/main/java/com/toniclecb/jaxwsclient/generated
+
+In the generated classes we need change package and add a namespace.
 
 ### Dependencies (jaxws and jaxwsclient)
 
@@ -41,3 +48,6 @@ Plugin jaxws-maven-plugin in pom.xml (jaxws) line 52
 </dependency>
 ```
 
+### Another things
+
+Dependency JUnit and one test case in jaxwsclient.
