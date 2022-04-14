@@ -15,4 +15,10 @@ public class NumbersImpl implements NumberService {
 		return Math.random();
 	}
 
+	@Override
+	public int getInt(int start, int end) {
+		int aux = end - start;
+		return (int)(Math.random() * aux + start);
+	}
+
 }

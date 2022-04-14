@@ -17,5 +17,8 @@ public interface NumberService {
 
 	@WebMethod
 	public double getDouble();
+	
+	@WebMethod
+	public int getInt(int start, int end);
 
 }
