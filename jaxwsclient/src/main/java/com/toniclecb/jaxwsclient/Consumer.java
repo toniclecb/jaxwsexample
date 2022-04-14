@@ -15,11 +15,22 @@ public class Consumer {
 	private static NumbersImplService service = new NumbersImplService();
 
 	public static void main(String[] args) {
-		System.out.println("DOUBLE:" + getDouble());
+		getData();
 	}
 
-	private static double getDouble() {
+	private static void getData() {
+		log("Creating port...");
 		NumberService port = service.getNumbersImplPort();
-		return port.getDouble();
+		log("Port created.");
+		log("Getting getDouble()...");
+		double d = port.getDouble();
+		log("Return with getDouble = " + d);
+		log("Getting getInt()...");
+		int i = port.getInt(10, 20);
+		log("Return with getInt = " + i);
+	}
+
+	private static void log(String s) {
+		System.out.println(s);
 	}
 }
