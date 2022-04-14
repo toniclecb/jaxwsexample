@@ -26,6 +26,8 @@ public class ObjectFactory {
 
     private final static QName _GetDouble_QNAME = new QName("http://server.jaxws.toniclecb.com/", "getDouble");
     private final static QName _GetDoubleResponse_QNAME = new QName("http://server.jaxws.toniclecb.com/", "getDoubleResponse");
+    private final static QName _GetInt_QNAME = new QName("http://server.jaxws.toniclecb.com/", "getInt");
+    private final static QName _GetIntResponse_QNAME = new QName("http://server.jaxws.toniclecb.com/", "getIntResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.toniclecb.jaxws.server
@@ -48,6 +50,22 @@ public class ObjectFactory {
      */
     public GetDoubleResponse createGetDoubleResponse() {
         return new GetDoubleResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInt }
+     * 
+     */
+    public GetInt createGetInt() {
+        return new GetInt();
+    }
+
+    /**
+     * Create an instance of {@link GetIntResponse }
+     * 
+     */
+    public GetIntResponse createGetIntResponse() {
+        return new GetIntResponse();
     }
 
     /**
@@ -74,6 +92,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.jaxws.toniclecb.com/", name = "getDoubleResponse")
     public JAXBElement<GetDoubleResponse> createGetDoubleResponse(GetDoubleResponse value) {
         return new JAXBElement<GetDoubleResponse>(_GetDoubleResponse_QNAME, GetDoubleResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInt }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link GetInt }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.jaxws.toniclecb.com/", name = "getInt")
+    public JAXBElement<GetInt> createGetInt(GetInt value) {
+        return new JAXBElement<GetInt>(_GetInt_QNAME, GetInt.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetIntResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link GetIntResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.jaxws.toniclecb.com/", name = "getIntResponse")
+    public JAXBElement<GetIntResponse> createGetIntResponse(GetIntResponse value) {
+        return new JAXBElement<GetIntResponse>(_GetIntResponse_QNAME, GetIntResponse.class, null, value);
     }
 
 }

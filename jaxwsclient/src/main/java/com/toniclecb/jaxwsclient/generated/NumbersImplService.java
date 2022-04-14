@@ -1,4 +1,3 @@
-
 package com.toniclecb.jaxwsclient.generated;
 
 import java.net.MalformedURLException;
@@ -17,7 +16,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "NumbersImplService", targetNamespace = "http://server.jaxws.toniclecb.com/", wsdlLocation = "file:/D:/DEV/eclipse-workspace/jaxws/wsdl/NumberWeb.wsdl")
+@WebServiceClient(name = "NumbersImplService", targetNamespace = "http://server.jaxws.toniclecb.com/", wsdlLocation = "file:/D:/DEV/GIT/jaxwsexample/jaxwsclient/wsdl/numbers.wsdl")
 public class NumbersImplService
     extends Service
 {
@@ -30,7 +29,7 @@ public class NumbersImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/D:/DEV/eclipse-workspace/jaxws/wsdl/NumberWeb.wsdl");
+            url = new URL("file:/D:/DEV/GIT/jaxwsexample/jaxwsclient/wsdl/numbers.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

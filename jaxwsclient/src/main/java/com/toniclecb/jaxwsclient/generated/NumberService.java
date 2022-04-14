@@ -1,7 +1,7 @@
-
 package com.toniclecb.jaxwsclient.generated;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -22,6 +22,24 @@ import javax.xml.ws.ResponseWrapper;
 })
 public interface NumberService {
 
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getInt", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxws.server.GetInt")
+    @ResponseWrapper(localName = "getIntResponse", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxws.server.GetIntResponse")
+    @Action(input = "http://server.jaxws.toniclecb.com/NumberService/getIntRequest", output = "http://server.jaxws.toniclecb.com/NumberService/getIntResponse")
+    public int getInt(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
 
     /**
      * 

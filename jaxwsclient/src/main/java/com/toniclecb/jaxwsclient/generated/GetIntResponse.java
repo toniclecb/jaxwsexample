@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de getDoubleResponse complex type.
+ * <p>Classe Java de getIntResponse complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="getDoubleResponse"&gt;
+ * &lt;complexType name="getIntResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,19 +26,19 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getDoubleResponse", namespace = "client", propOrder = {
+@XmlType(name = "getIntResponse", namespace = "client", propOrder = {
     "_return"
 })
-public class GetDoubleResponse {
+public class GetIntResponse {
 
     @XmlElement(name = "return")
-    protected double _return;
+    protected int _return;
 
     /**
      * Obtém o valor da propriedade return.
      * 
      */
-    public double getReturn() {
+    public int getReturn() {
         return _return;
     }
 
@@ -46,7 +46,7 @@ public class GetDoubleResponse {
      * Define o valor da propriedade return.
      * 
      */
-    public void setReturn(double value) {
+    public void setReturn(int value) {
         this._return = value;
     }
 

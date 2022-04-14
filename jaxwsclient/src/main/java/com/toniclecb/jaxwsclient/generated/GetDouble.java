@@ -1,4 +1,3 @@
-
 package com.toniclecb.jaxwsclient.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
