@@ -12,6 +12,13 @@ public class NumbersImpl implements NumberService {
 
 	@Override
 	public double getDouble() {
+		System.out.println("Server is processing");
+		try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Server returns");
 		return Math.random();
 	}
 
