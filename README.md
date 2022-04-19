@@ -26,6 +26,7 @@ http://localhost:8080/numbers?wsdl
 Plugin jaxws-maven-plugin in pom.xml (jaxws) line 52
 
 (jaxwsclient) - Generated in ...jaxwsexample\jaxwsclient\target\generated-sources\wsimport
+
 (jaxwsclient) - copied to ...jaxwsexample/jaxwsclient/src/main/java/com/toniclecb/jaxwsclient/generated
 
 In the generated classes we need change package and add a namespace.
