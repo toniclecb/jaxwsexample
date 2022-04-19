@@ -56,4 +56,23 @@ public interface NumberService {
     @ResponseWrapper(localName = "getDoubleResponse", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxwsclient.generated.GetDoubleResponse")
     @Action(input = "http://server.jaxws.toniclecb.com/NumberService/getDoubleRequest", output = "http://server.jaxws.toniclecb.com/NumberService/getDoubleResponse")
     public double getDouble();
+    /**/
+    /*
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getDouble", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxws.server.GetDouble")
+    @ResponseWrapper(localName = "getDoubleResponse", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxwsclient.generated.GetDoubleResponse")
+    @Action(input = "http://server.jaxws.toniclecb.com/NumberService/getDoubleRequest", output = "http://server.jaxws.toniclecb.com/NumberService/getDoubleResponse")
+    public Future<?> getDouble(
+          @WebParam(name = "asyncHandler", targetNamespace = "")
+          AsyncHandler<GetDoubleResponse> asyncHandler);
+    */
+    /**/
+	@WebMethod(operationName = "getDouble")
+    @RequestWrapper(localName = "getDouble", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxws.server.GetDouble")
+    @ResponseWrapper(localName = "getDoubleResponse", targetNamespace = "http://server.jaxws.toniclecb.com/", className = "com.toniclecb.jaxwsclient.generated.GetDoubleResponse")
+    public Future<?> getDoubleAsync(
+        @WebParam(name = "asyncHandler", targetNamespace = "")
+        AsyncHandler<GetDoubleResponse> asyncHandler);
+     /**/
 }
